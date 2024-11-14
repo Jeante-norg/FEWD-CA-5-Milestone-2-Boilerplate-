@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Darkbutton.css';
+import React, { useState } from "react";
+import "./Darkbutton.css";
 
 function Darkbutton() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -7,7 +7,15 @@ function Darkbutton() {
   // TASK 4: Implement the logic for changing the background and text color of the entire page.
   const toggleDarkMode = () => {
     // When dark mode is active, change background to black and text to white.
+    setIsDarkMode(!isDarkMode);
     // When light mode is active, change background to white and text to black.
+    document.body.style.background = isDarkMode
+      ? "rgb(240, 240, 240)"
+      : "rgb(24, 24, 24)";
+
+    document.body.style.color = isDarkMode
+      ? "rgb(0,0,0)"
+      : "rgb(240, 240, 240)";
   };
 
   return (
